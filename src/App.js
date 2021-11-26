@@ -7,17 +7,31 @@ import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import ProductHome from './components/ProductHome';
 import ProductHomeFn from './components/ProductHomeFn';
+import { Route, Routes } from 'react-router';
+import ListProducts from './routedcomp/ListProducts';
+import CreateProduct from './routedcomp/CreateProduct';
+import UpdateProduct from './routedcomp/UpdateProduct';
+import DetailsProduct from './routedcomp/DetailsProduct';
 
 function App() {
   return (
     <div className="container-fluid">
 
       <HeaderComponent />
-      {/* <HomeComponent /> */}
-      {/* <ProductList />
-      <ProductDetails /> */}
-      {/* <ProductHome/> */}
-      <ProductHomeFn />
+     <Routes>
+       <Route exact path="/" 
+              element={<HomeComponent/>}/>
+       <Route exact path="/products" 
+              element={<ProductHomeFn/>}/>
+        <Route exact path="/products/list" 
+              element={<ListProducts/>}/>
+        <Route exact path="/products/details/:id" 
+              element={<DetailsProduct/>}/>
+        <Route exact path="/products/update/:id" 
+              element={<UpdateProduct/>}/>
+        <Route exact path="/products/create" 
+              element={<CreateProduct/>}/>
+     </Routes>
     </div>
   );
 }

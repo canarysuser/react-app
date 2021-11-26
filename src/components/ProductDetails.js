@@ -54,7 +54,7 @@ export class ProductDetails extends Component {
                     Product Details
                 </div>
                 <div className="card-body">
-                    <form onSubmit={this.formSubmit}>
+                    <form onSubmit={this.props.formSubmit}>
                         <div className="form-group">
                             <label htmlFor="productId">Product Id</label>
                             <input type="text" name="productId" value={this.state.productId} 
@@ -64,7 +64,7 @@ export class ProductDetails extends Component {
                         <div className="form-group">
                             <label htmlFor="productName">Product Name</label>
                             <input type="text" name="productName" value={this.state.productName}
-                                onChange={this.handleChange}
+                                onChange={this.props.handleChange}
                                 className="form-control"/>
                         </div>
                         <div className="form-group">
